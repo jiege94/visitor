@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+		span{
+			float: left;
+			padding: 5px;
+			border-radius: 2px;
+			border: 1px solid #000;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<span data-num='0'>123</span>
+	<span data-num='0'>sdf</span>
+	<span data-num='0'>t3</span>
+	<span data-num='0'>1ert3</span>
+	<span data-num='0'>1rty3</span>
+	<span data-num='0'>rtrt</span>
+	<span data-num='0'>nbh3</span>
+	<span data-num='0'>wert</span>
+	<button>保存</button>
+	<h1></h1>
+
+	<form method="" action="">
+		<input type="text" name="" value="">
+		<input type="submit" name="" value="sdfsdf">
+	</form>
+	<script src='../js/jquery-1.8.3.min.js'></script>
+	<script>
+		var arr=[];
+		for (var i = 0; i < $('span').length; i++) {
+			arr.push(0);
+		};
+		$('span').click(function(){
+			var i=$('span').index(this);
+			var sum=0;
+			if(arr[i]==0){
+				$('span').eq(i).css('background','#123456')
+				arr[i]=1;
+			}else{
+				$('span').eq(i).css('background','#fff')
+				arr[i]=0;
+			}
+			for (var i = 0; i < arr.length; i++) {
+				if(arr[i]==1){
+					sum+=1;
+				}
+			};
+			$('h1').html(sum)
+		})
+		$('button').click(function(){
+			var sum=[];
+			for (var i = 0; i < arr.length; i++) {
+				if(arr[i]==1){
+					sum.push($('span').eq(i).html())
+				}
+			};
+			console.log(sum)
+		})
+
+
+		document.getElementsByTagName('form')[0].onsubmit=function(){
+			console.log($('input[type=text]').val());
+			return false;
+		}
+	</script>
+</body>
+</html>

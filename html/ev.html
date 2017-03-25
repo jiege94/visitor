@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+		form{
+			display: none;
+		}
+		.con{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			position: relative;
+			z-index: 10;
+		}
+		.back{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #12edfa;
+			opacity: 0.5;
+			z-index: -1;
+		}
+	</style>
+</head>
+
+<body>
+<button onclick="clicka(event)">sdfasdf</button>
+<form method="" action="" id="form">
+	<input type="text" name="" value="">
+</form>
+<input type="button" name="" value="" >
+
+
+<div class="con">
+	<div class="inner">sad afasd fasdfasdf sdf safa afethg dfgsdg </div>
+	
+</div><div class="back"></div>
+	<script src='js/jquery-1.8.3.min.js'></script>
+	<script>
+		/*function clicka(ev){
+			console.log(111)
+			console.log(ev)
+		}
+		document.onclick=function(ev){
+			var ev=ev||window.event;
+			var target=ev.target||ev.srcElement;
+			console.log(target)
+			// ev.stopPropagation()?ev.stopPropagation:ev.cancelBubble=true;
+			if (target.id!='form' && target.parentNode.id !='form' ){		
+				form.style.display='none';		
+			}	
+		}*/
+
+	/*	$('input[type=button]').click(function(){
+			$('form').css('display','block');
+			if ($('form').css('display')=='block') {
+				time();
+			};
+		})
+		function time(){
+			console.log(1)
+		}*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+		*{
+			margin: 0;
+			padding:0;
+		}
+		ul{
+			list-style: none;
+			width: 	415px;
+			position: relative;
+		}
+		li{
+			float: left;
+			width: 100px;
+			border: 1px solid #000;
+			min-height: 50px;
+		}  
+	</style>
+</head>
+<body>
+	<ul></ul>
+	<script>
+		var ul=document.getElementsByTagName('ul')[0];
+		
+		pubu();
+		function pubu(){
+			li_h=[];
+			for (var i = 0; i < 50; i++) {
+				var newli=document.createElement('li');
+				var h=Math.floor(Math.random()*200);
+				newli.style.height=h+"px";
+				ul.appendChild(newli);
+				var lis=ul.getElementsByTagName('li');
+				if (i<4) {
+					li_h[i]=lis[i].offsetHeight;
+				}else{
+					var min_h=Math.min(li_h[0],li_h[1],li_h[2],li_h[3]);
+					var min_index=getIndexMin(li_h,min_h);
+					newli.style.position="absolute";
+					newli.style.top=min_h+5+'px';
+					newli.style.left=lis[min_index].offsetLeft+'px';
+					li_h[min_index] +=lis[i].offsetHeight+5;
+				}
+			};
+		};
+		function getIndexMin(arr,val){
+			for(var i in arr){
+				if (arr[i] == val) {
+					return i;
+				};
+			}
+		}
+	</script>
+	<!-- <div ng-app='myapp' ng-controller='myCtrl'>
+		<input type="text" name="" value="" ng-model="keywords" ng-keyup="onkeyup()">
+		<ul>
+			<li ng-repeat="x in data">
+				<p>{{x.groupname+" "+x.grouptype}}</p>
+			</li>
+		</ul>
+	</div> -->
+		
+	<script src='js/angular-1.2.20.min.js'></script>
+	<script>
+		/*var app=angular.module('myapp',[]);
+		app.controller('myCtrl',function($scope,$http){
+			$scope.onkeyup=function(){
+				$http({
+					url:'http://webapi.tianjihr.com/position/searcher?keywords='+$scope.keywords,
+					method:'get',
+				}).success(function(data){
+					$scope.data=data.facetgroups;
+					console.log(data)
+				})
+			}
+		})
+				*/
+	</script>
+</body>
+</html>

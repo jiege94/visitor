@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+</head>
+<body>
+	<select name="" id="">
+		<option value="">tuiguang</option>
+		<option value="">tuiguang1</option>
+		<option value="">tuiguang2</option>
+		<option value="">tuiguang3</option>
+	</select>
+	<script src='../js/jquery-1.8.3.min.js'></script>
+	<script>
+	for (var i = 0; i < $('option').length; i++) {
+		console.log($('option').eq(i).html())
+	};
+		console.log($('option').text())
+	</script>
+</body>
+</html>

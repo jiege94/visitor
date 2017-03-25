@@ -1,0 +1,495 @@
+.all{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.background{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.background img{
+	width: 100%;
+	height: 100%;
+}
+.logo{
+	background: url(../images/logo.png) center 0 no-repeat;
+	width: 158px;
+    height: 207px;
+    display: block;
+    position: fixed;
+    left: 20px;
+    top: 0;
+}
+.nav ul{
+	position: fixed;
+    top: 230px;
+    left: 72px;
+}
+.nav ul li{
+	line-height: 20px;
+}
+/* 中间部分 */
+.main{
+	width: 850px;
+	margin: 70px auto 0;
+	position: relative;
+}
+.hello{
+	background: url(../images/bgN011.png) 0 0 repeat-y;
+    min-height: 260px;
+    padding: 40px;
+}
+.hello h2{
+	background: url(../images/hello.png) left center no-repeat;
+	height: 90px;
+	line-height: 100px;
+    padding-left: 230px;
+    font-size: 74px;
+    padding-top: 16px;
+    padding-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.hello h2 a{
+	color: #fff;
+}
+.hello p{
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.5
+}
+.hello .video{
+	margin: 10px auto;
+	text-align: center;
+	width: 660px;
+	height: 370px;
+	position: relative;
+}
+.video_play{
+	display: none;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+	background: url(../images/play.png) 0 0 no-repeat;
+}
+.video:hover .video_play{
+	display: block;
+}
+.page1{
+	padding-bottom: 0;
+}
+.slide{
+	width: calc(100% + 80px);
+	height: 142px;
+	overflow: hidden;
+	margin: 80px 0 0 -40px;
+}
+.slide div{
+	width: 400%;
+	height: 100%;
+	overflow: hidden;
+}
+.slide img{
+	width: 25%;
+	height: 100%;
+	float: left;
+}
+/* 可去之处 */
+.page2{
+	background: url(../images/bgN021.png) center center repeat-y;
+	margin-top: 100px;
+}
+.page2 h2{
+	background: url(../images/moreIcon.png) right center no-repeat;
+	padding-left: 0;
+}
+.page2 ul{
+	overflow: hidden;
+}
+.page2 li{
+	float: left;
+	position: relative;
+	cursor: pointer;
+	margin: 14px 13px 0 0;
+}
+.page2 img{
+	float: left;
+}
+.page2 a{
+	display: block;
+	overflow: hidden;
+}
+.page2 li:hover span{
+	color: #ccc;
+}
+.title{
+	background: url(../images/opacity60.png) 0 0 repeat;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.title span{
+	padding: 6px 10px;
+	display: inline-block;
+	color: #fff;
+	font-size: 14px;
+}
+figure{
+	position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+}
+figure img {
+	opacity: 0.95;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale3d(1.05,1.05,1);
+	transform: scale3d(1.05,1.05,1);
+}
+figcaption:before{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 180, 218, 0.49);
+    content: '';
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+    -webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-103%,0);
+    transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-103%,0);
+}
+figure:hover img {
+	opacity: 0.6;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+figure:hover figcaption::before {
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+}
+/* 可做之事 */
+.page3{
+	background: url(../images/bgN031.png) center center repeat-y;
+	overflow: hidden;
+}
+.page3 li{
+	margin: 0;
+}
+.page3_ul1{
+	float: left;
+	width: 100px;
+
+}
+.page3_ul1 li{
+	width: 100px;
+	height: 65px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	text-align: center;
+}
+.page3_ul1 li a{
+	width: 100%;
+	height: 100%;
+}
+.page3 img{
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+.page3_ul1 .title span{
+	font-size: 12px;
+	padding: 1px 10px;
+}
+.title1{
+	position: absolute;
+	top: 3px;
+	left: 2px;
+	background:#d62f34;
+	color: #fff;
+	border-radius: 5px;
+}
+.title1:hover{
+	background: #bc3e31;
+	color: #ded6c5;
+}
+.page3_ul2{
+	float: left;
+	margin-left: 50px;
+	width: calc(100% - 150px);
+}
+.page3_ul2 h3{
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.page3_ul2 p{
+	color: #eee;
+	width: 100%;
+}
+.con_p{
+	border-top: 3px solid #63b1c3;
+	padding-top: 5px;
+	margin-top: 5px;
+}
+.con_p p{
+	text-indent: 32px;
+}
+.rans h3{
+	margin-top: 10px;
+}
+.rans div:hover h3{
+	color: #11bde9;
+}
+/* 购物天堂 */
+.page4{
+	background: url(../images/bgN041.png) center center repeat-y;
+}
+.page4 .title{
+	top: 0;
+	left: 0;
+	bottom: 152px;
+	text-align: left;
+}
+.hover{
+	height: 100%;
+	width: 100%;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../images/hover.png) left top no-repeat;
+	background-size: 100% 100%;
+	text-align: left;
+}
+.hover strong{
+	color: #FF4040;
+	display: block;
+	margin-top: 30px;
+	text-align: left;
+	margin-left: 20px;
+}
+.hover p{
+	color: #666;
+	text-align: left;
+	font-size: 12px;
+	margin: 20px 20px 0 20px;
+}
+.page4 li:hover .hover{
+	display: block;
+}
+/* 游客体验 */
+.page5{
+	background: url(../images/bgN071.png) center center repeat-y;
+	overflow: hidden;
+	margin-top: 100px;
+}
+.page5 h2{
+	background: none;
+	padding-left: 0;
+}
+.page5 h2 a{
+	color: 	#030303;
+}
+.page5 ul{
+	margin-top: 40px;
+	overflow: hidden;
+}
+.page5 li{
+	width: 100% ;
+	margin: 0 auto 10px;
+	overflow: hidden;
+	border-bottom: 1px solid #000;
+	position: relative;
+	padding-bottom: 10px;
+}
+.page5 li>div{
+	float: left;
+}
+.left{
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	margin-right: 20px;
+}
+.right{
+	width: calc(100% - 70px);
+	margin-top: 5px;
+	padding-bottom: 5px;
+	position: relative;
+}
+.right p{
+	color: #303030;
+	font-size: 14px;
+	letter-spacing: 1px;
+	line-height: 16px;
+	margin: 5px 0;
+}
+.right strong{
+	font-size: 20px;
+	color: #1C86EE;
+}
+.right div{
+	overflow: hidden;
+}
+.right div img{
+	margin-right: 20px;
+	float: left;
+}
+.time_zan{
+	position: absolute;
+	bottom: -9px;
+	right: 10px;
+}
+.time{
+	position: absolute;
+	bottom: -9px;
+	left: 0px;
+}
+.shuru{
+	position: relative;
+}
+.submit{
+	position: absolute;
+	right: 0;
+	top: 205px;
+    width: 78px;
+    height: 34px;
+    display: inline-block;
+    cursor: pointer;
+    background: #00b7ee;
+    color: #fff;
+    z-index: 10;
+}
+#text{
+	width: 100%;
+	height: 200px;
+	font-size: 20px;
+}
+.shuru .num{
+	position: absolute;
+	right: 10px;
+	top: 180px;
+	color: #000;
+}
+/* go */
+.page6{
+	background: url(../images/bgN061.png) center center repeat-y;
+	height: 620px;
+	position: relative;!
+	margin-top: 200px;
+}
+.page6 img{
+	height: 100px;
+	position: absolute;
+}
+.page6 img:nth-child(1){
+	height: 400px;
+	top: -14%;
+	left: 32%;
+}
+.page6 img:nth-child(2){
+	top: 22%;
+	left: 31%;
+}
+.page6 img:nth-child(3){
+	top: 30%;
+	left: 10%;
+}
+.page6 img:nth-child(4){
+	top: 50%;
+	left: 20%;
+}
+.page6 img:nth-child(5){
+	top: 85.7%;
+	left: 0;
+}
+.page6 img:nth-child(6){
+	top: 25.6%;
+	left: 88.5%;
+}
+.page6 img:nth-child(7){
+	top: 71.4%;
+	left: 24%;
+	height: 200px;
+}
+.page6 img:nth-child(8){
+	top: 89.4%;
+	left: 59%;
+}
+.page6 img:nth-child(9){
+	top: 57.4%;
+	left: 48%;
+}
+.page6 img:nth-child(10){
+	top: 64.4%;
+	left: 71%;
+}
+.page6 img:nth-child(11){
+	top: 0.4%;
+	left: 88%;
+	height: 200px;
+}    
+.page6 img:nth-child(12){
+	top: 40%;
+    left: 55%;
+    width: 254px;
+    height: 100px;
+} 
+.page6 img:nth-child(13){
+	left: 5%;
+}
+.page6 img:nth-child(14){
+	top: 66%;
+    left: 0.5%;
+} 
+.page6 img:nth-child(15){
+	top: 10%;
+    left: 56%;
+} 
+/* foot */
+.foot{
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	background: #08243a;
+	z-index: 10;
+	margin-top: 100px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+}
+/* 头部 */
+.top_login{
+	color: #eee;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+}
+.top_login div{
+	width: 850px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.top_login div span{
+	font-size: 17px;
+	cursor: pointer;
+	float: left;
+}
+.top_login div span:hover{
+	text-decoration: underline;
+}
+.top_login .back{
+	float: right;
+}

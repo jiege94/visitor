@@ -1,0 +1,263 @@
+<!doctype html>
+<html ng-app='myapp' ng-controller='myCtrl'>
+<head>
+	<meta charset="utf-8">
+	<title>在路上</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="outer">
+	    <div id="slide" class="slide" class="index-slide" alt="star" >
+	        <!-- 轮播图片数量可自行增减 -->
+	        <div class="img"><img src="http://img5.imgtn.bdimg.com/it/u=893217397,949932400&fm=23&gp=0.jpg" alt=""></div>
+	        <div class="img"><img src="http://img0.imgtn.bdimg.com/it/u=3995041196,1283197682&fm=23&gp=0.jpg" alt=""></div>
+	        <div class="img"><img src="http://img3.imgtn.bdimg.com/it/u=2900273734,367054415&fm=23&gp=0.jpg" alt=""></div>
+	    </div>
+		<a href="javascript:;" class="click">
+		 	<span class="text">点击进入你的旅程</span>
+		  	<span class="line -right"></span>
+		  	<span class="line -top"></span>
+		  	<span class="line -left"></span>
+		  	<span class="line -bottom"></span>
+		</a>
+	</div>
+<!-- 	<div class="nav">
+	<nav><a href="#" class="green">在路上</a></nav>
+	<nav><a href="#" class="red">活动</a></nav>
+	<nav><a href="#" class="yellow">热门</a></nav>
+</div>
+<div class="outer1">
+	<div class="active">
+		<div class="fx-wrap">
+		  	<div class="card">
+			    <div class="front">
+			     	<img ng-src="{{data[0].image}}" alt="">
+					<div>
+						<p>{{data[0].line}}</p>
+					</div>
+			    </div>
+			    <div class="back">
+			      234
+			    </div>
+			</div>
+		</div>
+	</div>
+</div> -->
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<!-- 轮播图 -->
+	<script>
+		//窗口大小改变时改变轮播图宽高
+		$(window).resize(function(){
+		   $(".slide").height($(".slide").width()*0.5);
+		});
+		$(function(){
+		    $(".slide").height($(".slide").width()*0.5);
+		    slideNub = $(".slide .img").size(); //获取轮播图片数量
+		    for(i=0;i<slideNub;i++){
+		        $(".slide .img:eq("+i+")").attr("data-slide-imgId",i);
+		    }
+		    //根据轮播图片数量设定图片位置对应的class
+		    if(slideNub==1){
+		        for(i=0;i<slideNub;i++){
+		            $(".slide .img:eq("+i+")").addClass("img3");
+		        }
+		    }
+		    if(slideNub==2){
+		        for(i=0;i<slideNub;i++){
+		            $(".slide .img:eq("+i+")").addClass("img"+(i+3));
+		        }
+		    }
+		    if(slideNub==3){
+		        for(i=0;i<slideNub;i++){
+		            $(".slide .img:eq("+i+")").addClass("img"+(i+2));
+		        }
+		    }
+		    if(slideNub>3&&slideNub<6){
+		        for(i=0;i<slideNub;i++){
+		            $(".slide .img:eq("+i+")").addClass("img"+(i+1));
+		        }
+		    }
+		    if(slideNub>=6){
+		        for(i=0;i<slideNub;i++){
+		            if(i<5){
+		               $(".slide .img:eq("+i+")").addClass("img"+(i+1)); 
+		            }else{
+		                $(".slide .img:eq("+i+")").addClass("img5"); 
+		            }
+		        }
+		    }
+		    //自动轮播
+	        setInterval(function(){
+	            right();
+	        }, 3000);
+		    imgClickFy();
+		})
+
+		//轮播图片左右图片点击翻页
+		function imgClickFy(){
+		    $(".slide .img").removeAttr("onclick");
+		    $(".slide .img2").attr("onclick","left()");
+		    $(".slide .img4").attr("onclick","right()");
+		}
+		//右滑动
+		function right(){
+		    var fy = new Array();
+		    for(i=0;i<slideNub;i++){
+		        fy[i]=$(".slide .img[data-slide-imgId="+i+"]").attr("class");
+		    }
+		    for(i=0;i<slideNub;i++){
+		        if(i==0){
+		            $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[slideNub-1]);
+		        }else{
+		           $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[i-1]); 
+		        }
+		    }
+		    imgClickFy();
+		}
+
+		//左滑动
+		function left(){
+		    var fy = new Array();
+		    for(i=0;i<slideNub;i++){
+		        fy[i]=$(".slide .img[data-slide-imgId="+i+"]").attr("class");
+		    }
+		    for(i=0;i<slideNub;i++){
+		        if(i==(slideNub-1)){
+		            $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[0]);
+		        }else{
+		           $(".slide .img[data-slide-imgId="+i+"]").attr("class",fy[i+1]); 
+		        }
+		    }
+		    imgClickFy();
+		}
+	</script>
+	<script>
+		// $(function(){
+			/*初始化*/
+			/*$('body').animate({
+				scrollTop:0
+			},1000);
+			var wh=$(window).height();
+			$('.outer').height(wh);
+			$('.outer1').height(wh);
+			$(window).resize(function(){
+				wh=$(window).height();
+				$('.outer').height(wh);
+				$('.outer1').height(wh);
+			});*/
+			/*大图*/
+			/*var x=0;
+			var time1=null,time2=null;
+			function auto(){
+				time1=setInterval(function(){
+					clearInterval(time2);
+					x++;
+					if (x>=$('.inner img').length) {
+						x=1;
+						$('.con').scrollLeft(0)
+					}
+					
+					move();
+				},4000)
+			}
+			function move(){
+				var step=0;
+				var mixStep=40;
+				var start=$('.con').scrollLeft();
+				var end=$('.inner img').eq(0).width()*x;
+				var every=(end-start)/mixStep;
+				time2=setInterval(function(){
+					step++;
+					if (step>=40) {
+						step=0;
+						clearInterval(time2);
+					};
+					start+=every;
+					$('.con').scrollLeft(start);
+				},10)
+			}
+			auto();
+			$('.click').click(function(){
+				$('body').animate({
+					scrollTop:wh+'px',
+				},1000,function(){
+					$('.nav a').eq(1).addClass('aclick');
+					$('.nav').fadeIn(2000,function(){
+						$('.fx-wrap').each(function(i){
+		    			});
+						$('.fx-wrap').slideDown(1000,"easeOutElastic")
+					});
+				})
+			});*/
+			/*翻转*/
+			/*$('.fx-wrap').hover(function () {
+			    $(this).find('.card').addClass('flip-it');
+			},function(){
+				$(this).find('.card').removeClass('flip-it');
+			});*/
+			/*导航*/
+		/*	$('.nav nav').hover(function(){
+				$(this).find('a').addClass('ahover');
+			},function(){
+				$(this).find('a').removeClass('ahover');
+			})
+			$('.nav nav').click(function(){
+				var i=$('.nav nav').index(this);
+				$('body').animate({
+					scrollTop:wh*i
+				},1000);
+				$('.nav a').removeClass('aclick');
+				$(this).find('a').addClass('aclick');
+				
+			});
+		    var wheel;
+	    	window.onmousewheel=function(ev){
+	    		var whh=$('body').scrollTop();
+	    		if (wh%wh!=0) {
+	    			wheel=Math.floor(whh/wh)+1;
+	    		}else{
+	    			wheel=Math.floor(whh/wh);
+	    		}
+	    		console.log(wheel)
+	    		if (whh>=wh) {
+	    			var ev=ev||event;
+					if (ev.preventDefault) {
+							ev.preventDefault();
+					}else{
+						ev.returnValue=false;
+					}
+					if (ev.wheelDelta<0) {
+						wheel++;
+					}else{
+						wheel--;
+					}
+					$('body').animate({
+						scrollTop:wh*wheel,
+					},1000)
+	    		};
+			    	
+		    }
+		    
+		});*/
+
+	</script>
+	<script src='js/angular-1.2.20.min.js'></script>
+	<script>
+		var app=angular.module('myapp',[]);
+		app.controller('myCtrl',function($scope,$http){
+			/*$http({
+				url:'php/index.php?c=activity&a=activity&table=cover',
+				methed:'get'
+			}).success(function(data){
+				$scope.data=data;
+				console.log(data)
+			})*/
+		})
+	</script>
+</body>
+</html>

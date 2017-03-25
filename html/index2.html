@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app='myapp'>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/index2.css">
+</head>
+<body ng-controller='myCtrl'>
+	<div class="all">
+		<div class="left">
+			<div class="logo">
+				<a href="index1.html">北京欢迎您</a>
+			</div>
+			<div class="list">
+				<ul> 
+					<li>北京简介</li>
+					<li>可去之处</li>
+					<li>可做之事</li>
+					<li>可做之事</li>
+					<li>可做之事</li>
+				</ul>
+			</div>
+	    </div>
+	    <div class="right">
+	    	<div class="inner">
+	    		<div class="mol1">
+	    			<div class="con">
+	    				<h1>Hello,北京</h1>
+		    			<p>北京，中国首都。每个人心中，都有一个“我爱北京天安门”的北京情结，都曾梦想着生活在传说中的紫禁城；梦想着穿梭在王朔笔下的胡同和大院；也梦想着爬上万里长城，大喊：我是好汉！在每个人心中，都一个人属于自己的北京。 北京是一座包容万象、海纳百川的城市。三千年的历史，六朝故都，这里荟萃了自元明清以来的中华文化，荟萃了众多名胜古迹和人文景观。</p>
+	    			</div>
+	    		</div>
+	    		<div class="mol2">
+	    			
+	    		</div>
+	    	</div>
+	    </div>
+	</div>
+<script src='../js/jquery-1.8.3.min.js'></script>
+<script>
+	$('.left').height($(window).height());
+	$('.all').height($(window).height());
+	$(window).resize(function(){
+		$('.left').height($(window).height());
+		$('.all').height($(window).height());
+	})
+</script>
+
+</body>
+</html>
